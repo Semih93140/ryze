@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Mr. Siwer</title>
+
+<style>
+/* --- FOND --- */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: url("https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3NXlyYTg0cXViaTd5aDBvZ3ZzendzdW15NnF0OTlya2RqZ2RuZjliciZlcD12MV9naWZzX3JlbGF0ZWQmY3Q9Zw/ky8LNEscrP2ElTRjNV/giphy.gif") center center / cover no-repeat fixed;
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow: hidden;
+}
+
+/* --- ÉCRAN D'ENTRÉE --- */
+#enterScreen {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    backdrop-filter: blur(25px);
+    background: rgba(0,0,0,0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 999;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+#enterScreen h1 {
+    font-size: 45px;
+    text-shadow: 0 0 15px #822fff;
+    animation: pulse 1.5s infinite;
+}
+
+#enterScreen p {
+    font-size: 20px;
+    opacity: 0.8;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+/* --- CONTENU DU SITE --- */
+#content {
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 60px;
+    padding-bottom: 120px;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(8px);
+    filter: blur(25px);
+    transition: 0.6s;
+}
+
+/* --- TITRES --- */
+h1.title {
+    text-align: center;
+    font-size: 60px;
+    margin-bottom: 40px;
+    text-shadow: 0 0 20px #000000;
+    font-weight: bold;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 40px;
+    margin: 50px 0 25px 0;
+    text-shadow: 0 0 15px #ffffff;
+    font-weight: bold;
+}
+
+/* --- GRILLE --- */
+.cheat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.cheat-box {
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(12px);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    border: 2px solid rgba(255,255,255,0.25);
+    transition: 0.25s;
+    box-shadow: 0 0 15px #00000055;
+}
+
+.cheat-box:hover {
+    transform: scale(1.06);
+    border-color: #000000;
+    box-shadow: 0 0 20px #9d5cff55;
+}
+
+/* --- STATUS --- */
+.status {
+    margin-top: 10px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.working { background: #16a34a; }
+.down { background: #dc2626; }
+.soon { background: #f97316; }
+
+/* --- BOUTON DOWNLOAD (GLASS) --- */
+.btn {
+    margin-top: 12px;
+    padding: 12px 26px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+    transition: 0.25s;
+    box-shadow: 0 0 12px #00000055;
+}
+
+.btn:hover {
+    transform: scale(1.08);
+    border-color: #9d5cff;
+    box-shadow: 0 0 20px #9d5cff55;
+    background: rgba(255, 255, 255, 0.18);
+}
+
+/* --- FOOTER --- */
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 18px 0;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(6px);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    font-size: 16px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.footer span {
+    color: #9d5cff;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.footer span:hover {
+    color: #c7a3ff;
+    text-shadow: 0 0 10px #9d5cff;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ÉCRAN D'ENTRÉE -->
+<div id="enterScreen" onclick="enterSite()">
+    <h1>Appuyez pour entrer</h1>
+    <p>Bienvenue sur le Hub de Mr. Siwer</p>
+</div>
+
+<!-- CONTENU -->
+<div id="content">
+
+    <h1 class="title">Mr. Siwer</h1>
+
+    <!-- SECTION CHEATS -->
+    <h2 class="section-title">PARTIE CHEATS</h2>
+
+    <div class="cheat-grid">
+
+        <div class="cheat-box">
+            Velocity Internal
+            <div class="status working">WORKING</div>
+            <br>
+            <button class="btn" onclick="window.open('no valide')">Download</button>
+        </div>
+
+        <div class="cheat-box">
+            Yub X internal
+            <div class="status working">WORKING</div>
+            <br>
+            <button class="btn" onclick="window.open('https://cdn.discordapp.com/attachments/1476349118027796543/1480983814426726400/yub_x.rar?ex=69b1a928&is=69b057a8&hm=18b1f201927ea78b42eb20840ca74ed74a689f31e9491b9f0b86d9de34b9b373&')">Download</button>
+        </div>
+        
+        <div class="cheat-box">
+            fivem 
+            <div class="status working">WORKING</div>
+            <br>
+            <button class="btn" onclick="window.open('https://cdn.discordapp.com/attachments/1478772485909385328/1480954186916036728/fivem_esp.zip?ex=69b18d90&is=69b03c10&hm=3adcaad6bb99fe5a518122ea1532f8a7bf520ecdb862598c4b92e3512b770fac&')">Download</button>
+        </div>
+
+    </div>
+
+    <!-- SECTION SPOOFER -->
+    <h2 class="section-title">PARTIE SPOOFER</h2>
+
+    <div class="cheat-grid">
+
+        <div class="cheat-box">
+            Spoofer 1
+            <div class="status soon">COMING SOON</div>
+            <br>
+            <button class="btn" onclick="window.open('link invalide')">Bientôt</button>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    Discord :
+    <a href="https://discord.gg/sKDuSnBxrB" target="_blank">
+        <span>mon discord</span>
+    </a>
+    — Créé par <span>|| Mr. Siwer ||</span>
+</div>
+
+<script>
+function enterSite() {
+    document.getElementById("enterScreen").style.opacity = "0";
+    document.getElementById("enterScreen").style.pointerEvents = "none";
+    document.getElementById("content").style.filter = "blur(0px)";
+    document.body.style.overflow = "auto";
+}
+</script>
+
+</body>
+</html>
